@@ -22,6 +22,7 @@
 - Adquisición del IP
 
 **📞 Contacto para oportunidades comerciales:**
+
 [📧 Email](beyond.digital.web@gmail.com) |
 [📋 Visita mi Portafolio](https://pedromencias.netlify.app/) |
 [😏 Pásate por mi LinkedIn](https://www.linkedin.com/in/pedro-menc%C3%ADas-68223336b/) |
