@@ -3,6 +3,12 @@
 **QA Curator Pro es una plataforma avanzada que resuelve el cuello de botella crítico en el desarrollo de IA: la escasez de datasets de alta calidad en español. Nuestro sistema combina IA especializada con validación humana para transformar documentación técnica en pares pregunta-respuesta certificados, listos para fine-tuning de modelos.**
 
 ---
+<div align="center">
+  <img src="qademo1.png" alt="Demo" width="full">  
+  <p>Detalle de la interfaz</p>
+</div>
+
+---
 
 ## 🌟 Características Principales
 
