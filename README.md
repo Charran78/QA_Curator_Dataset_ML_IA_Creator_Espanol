@@ -51,6 +51,31 @@ cd qa-curator-pro
 cp .env.example .env
 # Editar .env y añadir: VITE_GEMINI_API_KEY=tu_clave_aqui
 
+## 🐳 Prerrequisitos - Docker
+Instalar Docker (Requerido para comandos Docker)
+Windows: Descargar Docker Desktop
+
+Mac: Docker Desktop for Mac
+
+Linux: Docker Engine
+
+Verificar Instalación
+
+docker --version
+docker-compose --version
+Si no tienes Docker instalado, usa los comandos tradicionales:
+
+npm install
+npm run dev
+# 🛠️ Comandos que SÍ funcionan sin Docker:
+
+# Estos funcionan inmediatamente:
+npm install
+npm run dev          # Desarrollo
+npm run build        # Build producción  
+npm run preview      # Preview build
+npm run lint         # Linter
+
 # 3. Ejecutar con Docker Compose
 npm run docker:compose-dev
 
