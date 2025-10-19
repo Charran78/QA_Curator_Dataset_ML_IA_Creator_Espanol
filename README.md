@@ -135,7 +135,7 @@ ollama list
 
 ---
 
-## 🔧 Scripts Disponibles
+## 🔧 Resumen de Scripts Disponibles
 
 ```bash
 # Desarrollo
