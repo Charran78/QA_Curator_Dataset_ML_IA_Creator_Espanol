@@ -89,6 +89,13 @@ VITE_GEMINI_API_KEY=tu_clave_aqui
 # 3. Ejecutar en desarrollo
 npm run dev
 
+# 4. Otros comandos:
+npm install
+npm run dev          # Desarrollo
+npm run build        # Build producción  
+npm run preview      # Preview build
+npm run lint         # Linter
+
 # La aplicación estará en: http://localhost:5173
 ```
 
