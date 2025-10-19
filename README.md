@@ -53,28 +53,19 @@ cp .env.example .env
 
 ## 🐳 Prerrequisitos - Docker
 Instalar Docker (Requerido para comandos Docker)
-Windows: Descargar Docker Desktop
 
-Mac: Docker Desktop for Mac
+[Windows: Descargar Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-Linux: Docker Engine
+[Mac: Docker Desktop for Mac](https://www.docker.com/products/docker-desktop/)
+
+[Linux: Docker Engine](https://www.docker.com/products/docker-desktop/)
 
 Verificar Instalación
 
 docker --version
 docker-compose --version
-Si no tienes Docker instalado, usa los comandos tradicionales:
-
-npm install
-npm run dev
-# 🛠️ Comandos que SÍ funcionan sin Docker:
-
-# Estos funcionan inmediatamente:
-npm install
-npm run dev          # Desarrollo
-npm run build        # Build producción  
-npm run preview      # Preview build
-npm run lint         # Linter
+Si no tienes Docker instalado, usa la Opción 2
+o instala Docker
 
 # 3. Ejecutar con Docker Compose
 npm run docker:compose-dev
