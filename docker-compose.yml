@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  qa-curator:
+    build: .
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_GEMINI_API_KEY=${GEMINI_API_KEY}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Servicio opcional para desarrollo con hot-reload
+  qa-curator-dev:
+    build:
+      context: .
+      target: builder
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_GEMINI_API_KEY=${GEMINI_API_KEY}
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev -- --host
+    restart: unless-stopped

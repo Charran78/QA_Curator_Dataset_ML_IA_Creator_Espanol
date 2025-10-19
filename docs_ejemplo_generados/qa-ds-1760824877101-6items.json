@@ -1,0 +1,121 @@
+{
+  "dataset_id": "qa-ds-1760824877101",
+  "domain": "tecnologia",
+  "model_used": "gemini-2.5-flash-preview-05-20",
+  "overall_accuracy_score": "0.9050",
+  "quality_assessment": {
+    "level": "avanzado",
+    "color": "text-green-600",
+    "bgColor": "bg-green-100"
+  },
+  "qa_pairs": [
+    {
+      "question": "Según el texto, ¿cuál es la opción recomendada para gestionar las variables de entorno durante el desarrollo y cómo se implementa?",
+      "answer": "La opción recomendada para el desarrollo es usar variables de entorno locales. Se implementa creando un archivo `.env` en la raíz del proyecto, donde se define la clave API, por ejemplo, `VITE_GEMINI_API_KEY=tu_clave_aqui_123`. Luego, en el código React, se accede a esta variable a través de `import.meta.env.VITE_GEMINI_API_KEY`. Además, es crucial añadir `.env` al archivo `.gitignore` para evitar que la clave se suba al control de versiones.",
+      "difficulty": "intermedio",
+      "qa_id": "tecnologia-qa-1760825152492-0",
+      "score": "0.8975",
+      "traceability": {
+        "confidence_level": "1.0000",
+        "source_type": "text"
+      },
+      "metadata": {
+        "difficulty": "intermedio",
+        "edited": false,
+        "quality_metrics": {
+          "accuracy": "0.7950"
+        }
+      }
+    },
+    {
+      "question": "¿Cómo maneja la \"Opción 2: Archivo de configuración externo\" la clave de API y qué consideración clave se menciona para entornos de producción?",
+      "answer": "La \"Opción 2: Archivo de configuración externo\" maneja la clave de API creando un archivo `src/config.js`. Dentro de este archivo, la clave se define en un objeto `GEMINI_CONFIG`, que puede depender del entorno. Específicamente, para el entorno de desarrollo (`process.env.NODE_ENV === 'development'`), utiliza `import.meta.env.VITE_GEMINI_API_KEY`. Para producción, el texto indica que se usaría \"otro método\", dejando el campo vacío en el ejemplo. Luego, este objeto de configuración se importa en los componentes principales.",
+      "difficulty": "intermedio",
+      "qa_id": "tecnologia-qa-1760825152492-1",
+      "score": "0.8975",
+      "traceability": {
+        "confidence_level": "1.0000",
+        "source_type": "text"
+      },
+      "metadata": {
+        "difficulty": "intermedio",
+        "edited": false,
+        "quality_metrics": {
+          "accuracy": "0.7950"
+        }
+      }
+    },
+    {
+      "question": "Explica la funcionalidad del componente `ApiKeyManager` en la \"Opción 3: Input seguro en tiempo de ejecución\", incluyendo su interfaz de usuario y su interacción con el estado de la aplicación principal.",
+      "answer": "El componente `ApiKeyManager` en la \"Opción 3: Input seguro en tiempo de ejecución\" proporciona una interfaz de usuario para que el usuario ingrese la clave de API de forma segura en tiempo de ejecución. Inicialmente, muestra un mensaje indicando que la clave no está configurada y un botón \"Configurar Clave API\". Al hacer clic en este botón, se muestra un campo de entrada de tipo `password` y botones \"Guardar\" y \"Cancelar\". Cuando el usuario ingresa una clave y presiona \"Guardar\", la clave se pasa a la función `onApiKeySet` (propiedad del componente), que actualiza un estado (`geminiApiKey`) en el componente principal (`App`). Este componente se renderiza condicionalmente en el componente principal solo si la `apiKey` no está configurada, ofreciendo una forma dinámica de gestionar credenciales sensibles.",
+      "difficulty": "avanzado",
+      "qa_id": "tecnologia-qa-1760825152492-2",
+      "score": "0.9200",
+      "traceability": {
+        "confidence_level": "1.0000",
+        "source_type": "text"
+      },
+      "metadata": {
+        "difficulty": "avanzado",
+        "edited": false,
+        "quality_metrics": {
+          "accuracy": "0.8400"
+        }
+      }
+    },
+    {
+      "question": "¿Cuál es la principal ventaja de la \"Opción 3: Input seguro en tiempo de ejecución\" en términos de seguridad y manejo de credenciales, comparado con las opciones estáticas?",
+      "answer": "La principal ventaja de la \"Opción 3: Input seguro en tiempo de ejecución\" es que la clave de API no necesita ser almacenada en el código fuente, en archivos de configuración estáticos ni en variables de entorno que podrían ser inadvertidamente expuestas en el control de versiones. En su lugar, el usuario final la proporciona directamente en tiempo de ejecución a través de una interfaz segura. Esto reduce significativamente el riesgo de exposición accidental de la clave API en repositorios públicos o durante el proceso de despliegue, mejorando la seguridad general del manejo de credenciales sensibles.",
+      "difficulty": "avanzado",
+      "qa_id": "tecnologia-qa-1760825152492-3",
+      "score": "0.9200",
+      "traceability": {
+        "confidence_level": "1.0000",
+        "source_type": "text"
+      },
+      "metadata": {
+        "difficulty": "avanzado",
+        "edited": false,
+        "quality_metrics": {
+          "accuracy": "0.8400"
+        }
+      }
+    },
+    {
+      "question": "Describe cómo la \"Implementación recomendada (Combinación)\" integra las diferentes fuentes de la clave API y cómo actualiza la URL de la API de Gemini.",
+      "answer": "La \"Implementación recomendada (Combinación)\" integra las fuentes de la clave API utilizando un estado de React (`geminiApiKey`) inicializado con el valor de la variable de entorno `VITE_GEMINI_API_KEY` (si existe). Si esta variable de entorno no está presente o se necesita cambiar, el componente `ApiKeyManager` permite al usuario ingresar una nueva clave en tiempo de ejecución, que luego actualiza este mismo estado `geminiApiKey` a través de la función `setGeminiApiKey`. La constante `apiKey` de la aplicación principal se establece directamente a partir del estado `geminiApiKey`. Finalmente, la `GEMINI_API_URL` se construye dinámicamente usando esta `apiKey` actualizada, asegurando que la URL de la API de Gemini siempre refleje la clave más reciente, ya sea de las variables de entorno iniciales o del input del usuario.",
+      "difficulty": "avanzado",
+      "qa_id": "tecnologia-qa-1760825152492-4",
+      "score": "0.9200",
+      "traceability": {
+        "confidence_level": "1.0000",
+        "source_type": "text"
+      },
+      "metadata": {
+        "difficulty": "avanzado",
+        "edited": false,
+        "quality_metrics": {
+          "accuracy": "0.8400"
+        }
+      }
+    },
+    {
+      "question": "¿Por qué es fundamental incluir `.env` en el archivo `.gitignore` cuando se utilizan variables de entorno locales?",
+      "answer": "Es fundamental incluir `.env` en el archivo `.gitignore` cuando se utilizan variables de entorno locales para evitar que este archivo, que contiene claves API y otra información sensible, sea subido accidentalmente a un repositorio de control de versiones público, como Git. Esto previene la exposición no intencionada de credenciales que podrían ser explotadas por terceros, manteniendo la seguridad de las aplicaciones y los servicios asociados.",
+      "difficulty": "básico",
+      "qa_id": "tecnologia-qa-1760825152492-5",
+      "score": "0.8750",
+      "traceability": {
+        "confidence_level": "1.0000",
+        "source_type": "text"
+      },
+      "metadata": {
+        "difficulty": "básico",
+        "edited": false,
+        "quality_metrics": {
+          "accuracy": "0.7500"
+        }
+      }
+    }
+  ]
+}
