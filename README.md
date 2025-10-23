@@ -287,7 +287,7 @@ Despliegue instantáneo con Docker - mismo comportamiento en desarrollo y produc
 **¿Interesado en licenciar la tecnología, invertir en el proyecto o explorar colaboraciones?**
 
 ### **Información de Contacto**
-[📧 Email](beyond.digital.web@gmail.com) | 
+[📧 Email](mailto:beyond.digital.web@gmail.com) | 
 [📋 Portafolio](https://pedromencias.netlify.app/) | 
 [💼 LinkedIn](https://www.linkedin.com/in/pedro-menc%C3%ADas-68223336b/) | 
 [☕ Invitar un Café](https://buymeacoffee.com/beyonddigiv)
